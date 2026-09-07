@@ -1,0 +1,90 @@
+[
+  {
+    "RequestId": "REQ-001",
+    "EquipmentId": "EQ-003",
+    "IssueTitle": "Compressor overheating",
+    "Description": "Air compressor is overheating during operation.",
+    "Priority": "Critical",
+    "Status": "Completed",
+    "ReportedBy": "jahanvi",
+    "CreatedDate": "2026-08-25T09:00:00",
+    "AssignedTo": "Jaanu"
+  },
+  {
+    "RequestId": "REQ-002",
+    "EquipmentId": "EQ-007",
+    "IssueTitle": " vibrationss",
+    "Description": "gghjklkjhgf.",
+    "Priority": "High",
+    "Status": "Completed",
+    "ReportedBy": "Saranya",
+    "CreatedDate": "2026-08-26T10:30:00",
+    "AssignedTo": "Mahi"
+  },
+  {
+    "RequestId": "REQ-003",
+    "EquipmentId": "Hydra pump",
+    "IssueTitle": "Pump inspection required",
+    "Description": "Routine inspection required for hydraulic pump.",
+    "Priority": "Medium",
+    "Status": "Completed",
+    "ReportedBy": "Raani",
+    "CreatedDate": "2026-08-20T14:00:00",
+    "AssignedTo": "jaanu"
+  },
+  {
+    "RequestId": "REQ-004",
+    "EquipmentId": "EQ-007",
+    "IssueTitle": "Display problem",
+    "Description": "FGHjklkjhgfghjkml,",
+    "Priority": "High",
+    "Status": "On Hold",
+    "ReportedBy": "Ravali",
+    "CreatedDate": "2026-09-02T12:01:33.8143894+05:30",
+    "AssignedTo": "ttttt"
+  },
+  {
+    "RequestId": "REQ-005",
+    "EquipmentId": "EQ-005",
+    "IssueTitle": "Pump Damage",
+    "Description": "dfghjklkjhgfd",
+    "Priority": "Medium",
+    "Status": "Open",
+    "ReportedBy": "Ravali",
+    "CreatedDate": "2026-09-02T14:01:31.3249521+05:30",
+    "AssignedTo": "Jaanu"
+  },
+  {
+    "RequestId": "REQ-006",
+    "EquipmentId": "EQ-006",
+    "IssueTitle": "Overheating crash",
+    "Description": "sdfghjklertyuiop;lmnbv",
+    "Priority": "High",
+    "Status": "Completed",
+    "ReportedBy": "Mahesh",
+    "CreatedDate": "2026-09-02T14:02:22.7103162+05:30",
+    "AssignedTo": "Manoj"
+  },
+  {
+    "RequestId": "REQ-007",
+    "EquipmentId": "EQ-010",
+    "IssueTitle": "Cable issue",
+    "Description": "Charger doesn\u0027t connecting to device",
+    "Priority": "High",
+    "Status": "Open",
+    "ReportedBy": "Akhila",
+    "CreatedDate": "2026-09-02T14:06:21.809766+05:30",
+    "AssignedTo": "Tttttt"
+  },
+  {
+    "RequestId": "REQ-008",
+    "EquipmentId": "EQ-007",
+    "IssueTitle": "Hardware issue",
+    "Description": "dfghjklkjhgfds",
+    "Priority": "Medium",
+    "Status": "Open",
+    "ReportedBy": "Ravali",
+    "CreatedDate": "2026-09-02T17:30:24.6898861+05:30",
+    "AssignedTo": "Jaanu"
+  }
+]

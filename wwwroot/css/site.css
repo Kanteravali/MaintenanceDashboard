@@ -1,0 +1,3183 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* =========================================================
+   EQUIPMENT MAINTENANCE DASHBOARD
+   ========================================================= */
+
+.maintenance-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #f5f6fa;
+    color: #20243a;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.dashboard-sidebar {
+    width: 250px;
+    min-width: 250px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #27105f, #4c1d95);
+    color: white;
+    padding: 25px 18px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 8px 28px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.logo-symbol {
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.14);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.logo-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.logo-subtitle {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.sidebar-heading {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    opacity: 0.55;
+    margin: 28px 10px 12px;
+}
+
+.dashboard-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dashboard-nav-link {
+    display: flex;
+    align-items: Center;
+    gap: 12px;
+    padding: 13px 12px;
+    border-radius: 9px;
+    text-decoration: none;
+    color: rgba(255,255,255,0.72);
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+    .dashboard-nav-link:hover,
+    .dashboard-nav-link.active {
+        background: rgba(255,255,255,0.15);
+        color: white;
+    }
+
+.nav-icon {
+    width: 24px;
+    text-align: center;
+    font-size: 17px;
+}
+
+
+.sidebar-information {
+    margin-top: auto;
+    background: rgba(255,255,255,0.08);
+    border-radius: 11px;
+    padding: 16px;
+}
+
+.sidebar-info-title {
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.sidebar-info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 10px;
+    margin-bottom: 11px;
+}
+
+.connected {
+    color: #86efac;
+}
+
+.sidebar-bottom {
+    font-size: 9px;
+    opacity: 0.55;
+    padding: 18px 5px 0;
+}
+
+    .sidebar-bottom span {
+        display: block;
+        margin-top: 4px;
+    }
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.dashboard-header {
+    background: white;
+    border-bottom: 1px solid #e7e8ed;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #7657b8;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 750;
+}
+
+.dashboard-header p {
+    margin: 5px 0 0;
+    color: #85899a;
+    font-size: 12px;
+}
+
+.dashboard-primary-button {
+    background: #4c1d95;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 11px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+    .dashboard-primary-button:hover {
+        background: #3b1578;
+        color: white;
+    }
+
+    .dashboard-primary-button span {
+        font-size: 16px;
+        margin-right: 4px;
+    }
+
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.dashboard-content {
+    padding: 28px 32px;
+}
+
+
+/* =========================
+   STATISTICS
+   ========================= */
+
+.dashboard-statistics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.dashboard-stat-card {
+    background: white;
+    border: 1px solid #e7e8ed;
+    border-radius: 12px;
+    padding: 19px;
+    box-shadow: 0 3px 12px rgba(20,20,40,0.035);
+    transition: 0.2s ease;
+}
+
+    .dashboard-stat-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(20,20,40,0.07);
+    }
+
+.stat-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666b7d;
+    font-size: 12px;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.stat-equipment {
+    background: #e8efff;
+    color: #2563eb;
+}
+
+.stat-open {
+    background: #fff0df;
+    color: #ea580c;
+}
+
+.stat-progress {
+    background: #eee9ff;
+    color: #7c3aed;
+}
+
+.stat-completed {
+    background: #e2f8e9;
+    color: #16a34a;
+}
+
+.stat-number {
+    font-size: 30px;
+    font-weight: 750;
+    margin-top: 15px;
+}
+
+.stat-description {
+    color: #8b8f9f;
+    font-size: 10px;
+    margin: 3px 0 15px;
+}
+
+.stat-link {
+    display: block;
+    border-top: 1px solid #eef0f3;
+    padding-top: 12px;
+    color: #4c1d95;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   MIDDLE SECTION
+   ========================= */
+
+.dashboard-middle {
+    display: grid;
+    grid-template-columns: 0.75fr 1.2fr 1.2fr;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.critical-dashboard-card,
+.dashboard-panel {
+    background: white;
+    border: 1px solid #e7e8ed;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(20,20,40,0.035);
+}
+
+.critical-dashboard-card {
+    padding: 20px;
+    border-top: 3px solid #ef4444;
+}
+
+.critical-symbol {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #fee2e2;
+    color: #dc2626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.critical-label {
+    color: #686d7e;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.critical-number {
+    font-size: 31px;
+    font-weight: 750;
+    margin-top: 4px;
+}
+
+.critical-content p {
+    color: #898e9e;
+    font-size: 10px;
+    margin: 4px 0 20px;
+}
+
+.critical-dashboard-card > a {
+    display: block;
+    border-top: 1px solid #f0f1f4;
+    padding-top: 13px;
+    color: #dc2626;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   PANELS
+   ========================= */
+
+.dashboard-panel {
+    padding: 20px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+    .panel-header h3 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .panel-header p {
+        margin: 4px 0 0;
+        color: #8a8e9e;
+        font-size: 10px;
+    }
+
+
+/* =========================
+   STATUS
+   ========================= */
+
+.status-list,
+.priority-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.status-row,
+.priority-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+}
+
+.status-name {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.status-dot,
+.priority-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-open-dot,
+.critical-dot {
+    background: #ef4444;
+}
+
+.status-progress-dot {
+    background: #6366f1;
+}
+
+.status-hold-dot,
+.medium-dot {
+    background: #f59e0b;
+}
+
+.status-completed-dot,
+.low-dot {
+    background: #22c55e;
+}
+
+.high-dot {
+    background: #f97316;
+}
+
+.priority-row span {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.status-row strong,
+.priority-row strong {
+    font-size: 12px;
+}
+
+
+/* =========================
+   RECENT REQUESTS
+   ========================= */
+
+.recent-requests-panel {
+    margin-top: 18px;
+    padding: 0;
+    overflow: hidden;
+}
+
+    .recent-requests-panel .panel-header {
+        padding: 20px;
+        margin: 0;
+    }
+
+.view-all-link {
+    color: #4c1d95;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.dashboard-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.dashboard-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+    .dashboard-table th {
+        background: #fafbfc;
+        color: #858a9b;
+        text-align: left;
+        font-size: 9px;
+        font-weight: 600;
+        padding: 12px 14px;
+        border-top: 1px solid #edf0f3;
+        border-bottom: 1px solid #edf0f3;
+    }
+
+    .dashboard-table td {
+        padding: 14px;
+        font-size: 10px;
+        border-bottom: 1px solid #f0f1f4;
+    }
+
+    .dashboard-table tbody tr:hover {
+        background: #faf9ff;
+    }
+
+
+/* =========================
+   BADGES
+   ========================= */
+
+.priority-badge,
+.request-status {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px 9px;
+    font-size: 8px;
+    font-weight: 650;
+}
+
+    .priority-badge.critical,
+    .request-status.open {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+
+    .priority-badge.high {
+        background: #ffedd5;
+        color: #ea580c;
+    }
+
+    .priority-badge.medium {
+        background: #fef3c7;
+        color: #d97706;
+    }
+
+    .priority-badge.low {
+        background: #dcfce7;
+        color: #16a34a;
+    }
+
+    .request-status.progress {
+        background: #ede9fe;
+        color: #6d28d9;
+    }
+
+    .request-status.hold {
+        background: #fef3c7;
+        color: #d97706;
+    }
+
+    .request-status.completed {
+        background: #dcfce7;
+        color: #16a34a;
+    }
+
+.table-view-button {
+    display: inline-block;
+    border: 1px solid #c4b5fd;
+    color: #5b21b6;
+    background: #faf8ff;
+    border-radius: 6px;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+    .table-view-button:hover {
+        background: #4c1d95;
+        color: white;
+    }
+
+
+/* =========================
+   EMPTY STATE
+   ========================= */
+
+.dashboard-empty {
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.empty-icon {
+    font-size: 32px;
+}
+
+.dashboard-empty h4 {
+    font-size: 14px;
+    margin: 10px 0 5px;
+}
+
+.dashboard-empty p {
+    font-size: 10px;
+    color: #888d9d;
+}
+
+.dashboard-empty a {
+    display: inline-block;
+    margin-top: 5px;
+    color: #4c1d95;
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .dashboard-statistics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-middle {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .critical-dashboard-card {
+        grid-column: span 2;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .dashboard-sidebar {
+        width: 210px;
+        min-width: 210px;
+    }
+
+    .dashboard-content {
+        padding: 22px;
+    }
+
+    .dashboard-header {
+        padding: 20px 22px;
+    }
+
+    .dashboard-middle {
+        grid-template-columns: 1fr;
+    }
+
+    .critical-dashboard-card {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .maintenance-dashboard {
+        display: block;
+    }
+
+    .dashboard-sidebar {
+        display: none;
+    }
+
+    .dashboard-header {
+        padding: 18px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .dashboard-header h1 {
+            font-size: 20px;
+        }
+
+    .dashboard-primary-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dashboard-content {
+        padding: 15px 12px;
+    }
+
+    .dashboard-statistics {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .dashboard-middle {
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    .recent-requests-panel {
+        margin-top: 12px;
+    }
+
+    .panel-header {
+        padding: 16px;
+    }
+
+    .recent-requests-panel .panel-header {
+        padding: 16px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .dashboard-content {
+        padding: 12px 9px;
+    }
+
+    .dashboard-header {
+        padding: 16px 12px;
+    }
+
+        .dashboard-header h1 {
+            font-size: 18px;
+        }
+
+        .dashboard-header p {
+            font-size: 10px;
+        }
+
+    .dashboard-stat-card {
+        padding: 16px;
+    }
+
+    .stat-number {
+        font-size: 27px;
+    }
+
+    .critical-dashboard-card,
+    .dashboard-panel {
+        border-radius: 9px;
+    }
+
+
+    /* =========================================================
+   EQUIPMENT PAGE
+   ========================================================= */
+
+    .equipment-page {
+        width: 100%;
+        padding: 25px 30px 40px;
+        min-height: calc(100vh - 70px);
+        background: linear-gradient( 135deg, #f4f7fb 0%, #e8eef5 50%, #f8fafc 100% );
+    }
+
+    .equipment-page-heading {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+    }
+
+        .equipment-page-heading > div:first-child {
+            text-align: center;
+        }
+
+        .equipment-page-heading h1 {
+            text-align: center;
+        }
+
+        .equipment-page-heading p {
+            text-align: center;
+        }
+
+    /* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+    .page-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .page-title {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 700;
+        color: #1f2937;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .page-subtitle {
+        margin: 6px 0 0;
+        color: #6b7280;
+        font-size: 15px;
+    }
+
+
+    /* Add Equipment Button */
+
+    .add-equipment-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 11px 18px;
+        background-color: #2563eb;
+        color: white;
+        border-radius: 7px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+        .add-equipment-btn:hover {
+            background-color: #1d4ed8;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+    .plus-icon {
+        font-size: 20px;
+        line-height: 14px;
+    }
+
+
+    /* =========================================================
+   SEARCH CARD
+   ========================================================= */
+
+    .search-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        overflow: hidden;
+    }
+
+
+    /* Search Header */
+
+    .search-card-header {
+        padding: 16px 20px;
+        background-color: #f8fafc;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+        .search-card-header h5 {
+            margin: 0;
+            color: #1f2937;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+
+    /* Search Body */
+
+    .search-card-body {
+        padding: 20px;
+    }
+
+
+    /* Search Form */
+
+    .search-form {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr auto;
+        gap: 18px;
+        align-items: end;
+    }
+
+
+    /* Fields */
+
+    .search-field {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .search-field label {
+            margin-bottom: 7px;
+            color: #374151;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+    /* Input */
+
+    .equipment-input {
+        width: 100%;
+        height: 42px;
+        padding: 0 13px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        background-color: white;
+        color: #374151;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .equipment-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.10);
+        }
+
+
+    /* Search Buttons */
+
+    .search-buttons {
+        display: flex;
+        gap: 8px;
+    }
+
+
+    /* Search Button */
+
+    .search-btn {
+        height: 42px;
+        padding: 0 20px;
+        border: none;
+        border-radius: 6px;
+        background-color: #2563eb;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+        .search-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+
+    /* Clear Button */
+
+    .clear-btn {
+        height: 42px;
+        padding: 0 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        background-color: #6b7280;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+        .clear-btn:hover {
+            background-color: #4b5563;
+            color: white;
+        }
+
+
+    /* =========================================================
+   EQUIPMENT TABLE CARD
+   ========================================================= */
+
+    .equipment-card {
+        background-color: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        overflow: hidden;
+    }
+
+
+    /* Table Card Header */
+
+    .equipment-card-header {
+        min-height: 72px;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e5e7eb;
+        background-color: white;
+    }
+
+        .equipment-card-header h5 {
+            margin: 0 0 4px;
+            color: #1f2937;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+    .equipment-description {
+        color: #6b7280;
+        font-size: 12px;
+    }
+
+    .total-equipment {
+        color: #6b7280;
+        font-size: 13px;
+    }
+
+        .total-equipment strong {
+            color: #1f2937;
+            font-size: 15px;
+        }
+
+
+    /* =========================================================
+   TABLE
+   ========================================================= */
+
+    .equipment-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        /* Gives smooth horizontal scrolling on mobile */
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .equipment-table {
+        width: 100%;
+        min-width: 1100px;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 14px;
+    }
+
+
+        /* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+        .equipment-table thead th {
+            position: sticky;
+            top: 70px;
+            z-index: 10;
+            padding: 15px 16px;
+            background-color: #7891a3;
+            color: white;
+            border: none;
+            text-align: left;
+            white-space: nowrap;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+
+            /* First Header */
+
+            .equipment-table thead th:first-child {
+                padding-left: 20px;
+            }
+
+
+            /* Last Header */
+
+            .equipment-table thead th:last-child {
+                padding-right: 20px;
+            }
+
+
+    /* Sort Icon */
+
+    .sort-icon {
+        margin-left: 5px;
+        opacity: 0.8;
+        font-size: 13px;
+    }
+
+
+    /* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+    .equipment-table tbody td {
+        padding: 17px 16px;
+        border-bottom: 1px solid #edf0f2;
+        color: #374151;
+        vertical-align: middle;
+        background-color: white;
+    }
+
+
+        /* First column */
+
+        .equipment-table tbody td:first-child {
+            padding-left: 20px;
+        }
+
+
+        /* Last column */
+
+        .equipment-table tbody td:last-child {
+            padding-right: 20px;
+        }
+
+
+    /* Row hover */
+
+    .equipment-table tbody tr {
+        transition: background-color 0.15s ease;
+    }
+
+        .equipment-table tbody tr:hover td {
+            background-color: #f8fafc;
+        }
+
+
+        /* Remove last border */
+
+        .equipment-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+
+    /* =========================================================
+   EQUIPMENT ID
+   ========================================================= */
+
+    .equipment-id strong {
+        color: #1f2937;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+
+    /* Equipment Name */
+
+    .equipment-name {
+        color: #1f2937 !important;
+        font-weight: 600;
+        min-width: 170px;
+    }
+
+
+    /* Location */
+
+    .location-text {
+        color: #4b5563;
+        white-space: nowrap;
+    }
+
+
+    /* =========================================================
+   CATEGORY
+   ========================================================= */
+
+    .category-badge {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #f1f5f9;
+        border: 1px solid #e2e8f0;
+        border-radius: 5px;
+        color: #475569;
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+
+    /* =========================================================
+   STATUS
+   ========================================================= */
+
+    .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 6px 11px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+
+    /* Status Dot */
+
+    .status-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+
+    /* Operational */
+
+    .status-operational {
+        background-color: #e8f7ee;
+        color: #15803d;
+    }
+
+        .status-operational .status-dot {
+            background-color: #22c55e;
+        }
+
+
+    /* Maintenance */
+
+    .status-maintenance {
+        background-color: #fff7df;
+        color: #a16207;
+    }
+
+        .status-maintenance .status-dot {
+            background-color: #eab308;
+        }
+
+
+    /* Other Status */
+
+    .status-other {
+        background-color: #f1f5f9;
+        color: #475569;
+    }
+
+        .status-other .status-dot {
+            background-color: #64748b;
+        }
+
+
+    /* =========================================================
+   ACTIONS
+   ========================================================= */
+
+    .actions-column {
+        min-width: 210px;
+        text-align: left;
+    }
+
+
+    .action-buttons {
+        display: flex;
+        gap: 6px;
+        flex-wrap: nowrap;
+    }
+
+
+    .action-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        padding: 0 11px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        transition: all 0.15s ease;
+    }
+
+
+    /* Details */
+
+    .details-btn {
+        background-color: #e0f2fe;
+        color: #0369a1;
+        border: 1px solid #bae6fd;
+    }
+
+        .details-btn:hover {
+            background-color: #bae6fd;
+            color: #075985;
+        }
+
+
+    /* Edit */
+
+    .edit-btn {
+        background-color: #fef3c7;
+        color: #a16207;
+        border: 1px solid #fde68a;
+    }
+
+        .edit-btn:hover {
+            background-color: #fde68a;
+            color: #854d0e;
+        }
+
+
+    /* Delete */
+
+    .delete-btn {
+        background-color: #fee2e2;
+        color: #b91c1c;
+        border: 1px solid #fecaca;
+    }
+
+        .delete-btn:hover {
+            background-color: #fecaca;
+            color: #991b1b;
+        }
+
+
+    /* =========================================================
+   NO DATA
+   ========================================================= */
+
+    .no-data {
+        height: 220px;
+        text-align: center;
+    }
+
+    .no-data-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .no-data-icon {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+
+    .no-data-content strong {
+        color: #374151;
+        font-size: 15px;
+    }
+
+    .no-data-content span {
+        color: #9ca3af;
+        font-size: 13px;
+    }
+
+
+    /* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+
+    /* Tablets */
+
+    @media (max-width: 992px) {
+
+        .equipment-page {
+            padding: 20px;
+        }
+
+        .search-form {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .search-buttons {
+            grid-column: span 2;
+            justify-content: flex-start;
+        }
+    }
+
+
+    /* Mobile */
+
+    @media (max-width: 768px) {
+
+        .equipment-page {
+            padding: 15px;
+        }
+
+
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+
+        .page-title {
+            font-size: 25px;
+        }
+
+
+        .add-equipment-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+
+        .search-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+
+        .search-field {
+            width: 100%;
+        }
+
+
+        .search-buttons {
+            width: 100%;
+        }
+
+
+        .search-btn,
+        .clear-btn {
+            flex: 1;
+        }
+
+
+        .equipment-card-header {
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+
+        .total-equipment {
+            white-space: nowrap;
+        }
+
+
+        /*
+       Table remains wide and can be
+       horizontally scrolled on mobile.
+    */
+
+        .equipment-table {
+            min-width: 1100px;
+        }
+    }
+
+
+
+
+
+
+
+
+    /* =========================================================
+   EQUIPMENT PAGE - PROFESSIONAL DESIGN
+   ONLY EQUIPMENT PAGE
+   ========================================================= */
+
+
+    /* =========================================================
+   EQUIPMENT PAGE BACKGROUND
+   ========================================================= */
+
+    .equipment-page,
+    .container-fluid:has(.equipment-table) {
+        background: linear-gradient( rgba(245, 248, 250, 0.96), rgba(239, 244, 247, 0.96) ), radial-gradient( circle at 10% 20%, rgba(71, 101, 116, 0.08), transparent 35% ), radial-gradient( circle at 90% 80%, rgba(71, 101, 116, 0.06), transparent 35% );
+        min-height: 100vh;
+        padding-bottom: 40px;
+    }
+
+
+        /* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+        .equipment-page h1,
+        .container-fluid:has(.equipment-table) h1 {
+            color: #263640;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 4px;
+        }
+
+
+        .container-fluid:has(.equipment-table) > div:first-child p {
+            color: #7b8790 !important;
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================================
+   ADD EQUIPMENT BUTTON
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .btn-primary {
+            background: #365967;
+            border-color: #365967;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 10px 16px;
+            box-shadow: 0 3px 8px rgba(54, 89, 103, 0.18);
+            transition: all 0.2s ease;
+        }
+
+
+            .container-fluid:has(.equipment-table)
+            .btn-primary:hover {
+                background: #294752;
+                border-color: #294752;
+                transform: translateY(-1px);
+                box-shadow: 0 5px 12px rgba(54, 89, 103, 0.22);
+            }
+
+
+        /* =========================================================
+   SEARCH CARD
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .card {
+            border: 1px solid #dfe5e8;
+            border-radius: 11px;
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 4px 14px rgba(38, 54, 64, 0.06);
+            overflow: hidden;
+        }
+
+
+        /* Search Header */
+
+        .container-fluid:has(.equipment-table)
+        .card-header {
+            background: linear-gradient( 90deg, #f4f7f8, #fafbfc );
+            border-bottom: 1px solid #e2e7ea;
+            padding: 15px 20px;
+        }
+
+
+            .container-fluid:has(.equipment-table)
+            .card-header h5 {
+                color: #2e414b;
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: 0.2px;
+            }
+
+
+        /* =========================================================
+   SEARCH INPUTS
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .form-label {
+            color: #53636d;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+
+        .container-fluid:has(.equipment-table)
+        .form-control,
+        .container-fluid:has(.equipment-table)
+        .form-select {
+            height: 41px;
+            border: 1px solid #d6dee2;
+            border-radius: 7px;
+            color: #37474f;
+            background: #ffffff;
+            font-size: 12px;
+            box-shadow: none;
+            transition: all 0.2s ease;
+        }
+
+
+            .container-fluid:has(.equipment-table)
+            .form-control::placeholder {
+                color: #a2adb3;
+            }
+
+
+            .container-fluid:has(.equipment-table)
+            .form-control:focus,
+            .container-fluid:has(.equipment-table)
+            .form-select:focus {
+                border-color: #587684;
+                box-shadow: 0 0 0 3px rgba(88, 118, 132, 0.12);
+            }
+
+
+        /* =========================================================
+   SEARCH / CLEAR BUTTON
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .btn-secondary {
+            background: #edf1f3;
+            border-color: #dce2e5;
+            color: #53636d;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 7px;
+            height: 41px;
+            padding-left: 17px;
+            padding-right: 17px;
+        }
+
+
+            .container-fluid:has(.equipment-table)
+            .btn-secondary:hover {
+                background: #e1e7ea;
+                color: #344650;
+                border-color: #d1dadd;
+            }
+
+
+        /* =========================================================
+   TABLE CARD
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .shadow-sm {
+            box-shadow: 0 5px 18px rgba(38, 54, 64, 0.07) !important;
+        }
+
+
+        /* =========================================================
+   EQUIPMENT LIST HEADER
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .card-header.d-flex {
+            min-height: 70px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+            .container-fluid:has(.equipment-table)
+            .card-header.d-flex h5 {
+                color: #293c46;
+                font-size: 15px;
+                font-weight: 700;
+                margin: 0;
+            }
+
+
+            .container-fluid:has(.equipment-table)
+            .card-header.d-flex
+            .text-muted {
+                color: #89949b !important;
+                font-size: 11px;
+            }
+
+
+        /* =========================================================
+   TABLE RESPONSIVE WRAPPER
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: visible;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: #aebbc1 #f1f4f5;
+        }
+
+
+        /* =========================================================
+   PROFESSIONAL EQUIPMENT TABLE
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .table {
+            width: 100%;
+            min-width: 1100px;
+            margin: 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #ffffff;
+            font-size: 12px;
+        }
+
+
+            /* =========================================================
+   STICKY TABLE HEADER
+   ========================================================= */
+
+            .container-fluid:has(.equipment-table)
+            .table thead th {
+                position: sticky;
+                top: 0;
+                z-index: 50;
+                height: 52px;
+                padding: 10px 14px;
+                background: linear-gradient( 135deg, #526e7b, #405c69 );
+                color: #ffffff;
+                border: none;
+                text-align: center;
+                vertical-align: middle;
+                white-space: nowrap;
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 0.55px;
+                text-transform: uppercase;
+                box-shadow: 0 2px 5px rgba(38, 54, 64, 0.16);
+            }
+
+
+                /* =========================================================
+   HEADER FIRST / LAST COLUMN
+   ========================================================= */
+
+                .container-fluid:has(.equipment-table)
+                .table thead th:first-child {
+                    border-top-left-radius: 0;
+                    padding-left: 18px;
+                }
+
+
+                .container-fluid:has(.equipment-table)
+                .table thead th:last-child {
+                    padding-right: 18px;
+                }
+
+
+            /* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td {
+                height: 58px;
+                padding: 11px 14px;
+                color: #52616a;
+                background: #ffffff;
+                border-bottom: 1px solid #e8edef;
+                text-align: center;
+                vertical-align: middle;
+                white-space: nowrap;
+            }
+
+
+            /* =========================================================
+   ROW HOVER
+   ========================================================= */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody tr {
+                transition: background-color 0.18s ease, box-shadow 0.18s ease;
+            }
+
+
+                .container-fluid:has(.equipment-table)
+                .table tbody tr:hover td {
+                    background: #f5f9fa;
+                    border-bottom-color: #dce6ea;
+                }
+
+
+            /* =========================================================
+   EQUIPMENT ID
+   ========================================================= */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:first-child {
+                padding-left: 18px;
+            }
+
+
+                .container-fluid:has(.equipment-table)
+                .table tbody td:first-child strong {
+                    color: #2f424c;
+                    font-size: 11px;
+                    font-weight: 700;
+                }
+
+
+            /* =========================================================
+   EQUIPMENT NAME
+   ========================================================= */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:nth-child(2) {
+                color: #344750;
+                font-weight: 600;
+            }
+
+
+            /* =========================================================
+   CATEGORY
+   ========================================================= */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:nth-child(3) {
+                color: #50616a;
+                font-weight: 500;
+            }
+
+
+            /* =========================================================
+   LOCATION
+   ========================================================= */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:nth-child(4) {
+                color: #5d6b73;
+                font-weight: 500;
+            }
+
+
+            /* =========================================================
+   MAINTENANCE DATE
+   ========================================================= */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:nth-child(5) {
+                color: #586770;
+                font-size: 11px;
+                font-weight: 500;
+            }
+
+
+            /* =========================================================
+   STATUS
+   ========================================================= */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:nth-child(6) {
+                min-width: 135px;
+            }
+
+
+        /* Operational */
+
+        .container-fluid:has(.equipment-table)
+        .badge.bg-success {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            min-width: 92px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #e7f5eb !important;
+            color: #23783e !important;
+            font-size: 10px;
+            font-weight: 650;
+        }
+
+
+            /* Add green indicator */
+
+            .container-fluid:has(.equipment-table)
+            .badge.bg-success::before {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #28a745;
+                display: inline-block;
+            }
+
+
+        /* Other Status */
+
+        .container-fluid:has(.equipment-table)
+        .badge.bg-warning {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            min-width: 92px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: #fff4dc !important;
+            color: #9a6908 !important;
+            font-size: 10px;
+            font-weight: 650;
+        }
+
+
+        /* =========================================================
+   ACTIONS
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .table tbody td:last-child {
+            min-width: 205px;
+        }
+
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:last-child
+            a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 54px;
+                height: 30px;
+                margin: 2px;
+                padding: 0 9px;
+                border-radius: 6px;
+                font-size: 10px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.18s ease;
+            }
+
+
+            /* Details */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:last-child
+            .btn-info {
+                background: #e5f3f8;
+                border: 1px solid #cce5ed;
+                color: #17677e;
+            }
+
+
+                .container-fluid:has(.equipment-table)
+                .table tbody td:last-child
+                .btn-info:hover {
+                    background: #d3ebf2;
+                    color: #104f63;
+                    transform: translateY(-1px);
+                }
+
+
+            /* Edit */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:last-child
+            .btn-warning {
+                background: #fff2d9;
+                border: 1px solid #f3dfb3;
+                color: #96670c;
+            }
+
+
+                .container-fluid:has(.equipment-table)
+                .table tbody td:last-child
+                .btn-warning:hover {
+                    background: #ffe8bc;
+                    color: #795207;
+                    transform: translateY(-1px);
+                }
+
+
+            /* Delete */
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td:last-child
+            .btn-danger {
+                background: #fbe8e8;
+                border: 1px solid #f2cccc;
+                color: #b23b3b;
+            }
+
+
+                .container-fluid:has(.equipment-table)
+                .table tbody td:last-child
+                .btn-danger:hover {
+                    background: #f7d5d5;
+                    color: #8f2929;
+                    transform: translateY(-1px);
+                }
+
+
+        /* =========================================================
+   NO EQUIPMENT
+   ========================================================= */
+
+        .container-fluid:has(.equipment-table)
+        .table tbody td[colspan="7"] {
+            height: 200px;
+            color: #909ba2;
+            background: #ffffff;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 13px;
+        }
+
+
+    /* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+    @media (max-width: 992px) {
+
+        .container-fluid:has(.equipment-table) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+            .container-fluid:has(.equipment-table)
+            .table {
+                min-width: 1100px;
+            }
+
+
+            .container-fluid:has(.equipment-table)
+            .table-responsive {
+                border-radius: 0 0 10px 10px;
+            }
+    }
+
+
+    /* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+    @media (max-width: 768px) {
+
+        .container-fluid:has(.equipment-table) {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+
+            .container-fluid:has(.equipment-table)
+            .d-flex.justify-content-between.align-items-center.mb-4 {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+
+            .container-fluid:has(.equipment-table)
+            h1 {
+                font-size: 22px;
+            }
+
+
+            .container-fluid:has(.equipment-table)
+            .table {
+                min-width: 1100px;
+            }
+
+
+            .container-fluid:has(.equipment-table)
+            .card-header {
+                padding: 13px 15px;
+            }
+
+
+            .container-fluid:has(.equipment-table)
+            .table thead th {
+                height: 48px;
+                font-size: 9px;
+            }
+
+
+            .container-fluid:has(.equipment-table)
+            .table tbody td {
+                height: 54px;
+                font-size: 11px;
+            }
+    }
+
+
+    /* =========================================================
+   RESPONSIVE - SMALL MOBILE
+   ========================================================= */
+
+    @media (max-width: 576px) {
+
+        .container-fluid:has(.equipment-table) {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+
+            .container-fluid:has(.equipment-table)
+            .equipment-search-card
+            .card-body {
+                padding: 15px;
+            }
+
+
+            .container-fluid:has(.equipment-table)
+            .table-card {
+                border-radius: 8px;
+            }
+
+
+            /*
+       The table remains wide so information is NOT
+       squeezed or hidden. User can scroll horizontally.
+    */
+
+            .container-fluid:has(.equipment-table)
+            .table {
+                min-width: 1100px;
+            }
+    }
+}
+
+
+
+
+
+
+/* =========================================================
+   MAINTENANCE REQUESTS PAGe
+   ========================================================= */
+
+/* Page background - applies only when this table exists */
+body:has(.container.mt-4 table.table.table-bordered.table-striped) {
+    background: #f3f6fa;
+}
+
+    /* Main container */
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 {
+        max-width: 1450px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+        /* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 > .d-flex {
+            position: relative;
+            justify-content: center !important;
+            text-align: center;
+            margin-bottom: 30px !important;
+        }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 > .d-flex > div {
+                text-align: center;
+            }
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+            color: #182b49;
+        }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 h1::after {
+                content: "";
+                display: block;
+                width: 75px;
+                height: 4px;
+                margin: 12px auto 10px;
+                background: #182b49;
+                border-radius: 10px;
+            }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 h1 + p {
+                margin: 0;
+                color: #667085;
+                font-size: 15px;
+            }
+
+        /* Create Request button stays on the right */
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 > .d-flex > a {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #183153;
+            border: none;
+            border-radius: 7px;
+            padding: 10px 18px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(24, 49, 83, 0.15);
+        }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 > .d-flex > a:hover {
+                background: #10243e;
+                transform: translateY(-50%);
+            }
+
+
+        /* =========================================================
+   SEARCH AND FILTER SECTION
+   ========================================================= */
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 form.row {
+            background: #ffffff;
+            padding: 22px;
+            margin-left: 0;
+            margin-right: 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(16, 24, 40, 0.07);
+            border: 1px solid #e4e9f0;
+        }
+
+            /* Labels */
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 form.row .form-label {
+                color: #344054;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 7px;
+            }
+
+            /* Search input and dropdown */
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 form.row .form-control,
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 form.row .form-select {
+                height: 43px;
+                border: 1px solid #d0d5dd;
+                border-radius: 7px;
+                color: #344054;
+                font-size: 14px;
+                box-shadow: none;
+            }
+
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 form.row .form-control:focus,
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 form.row .form-select:focus {
+                    border-color: #183153;
+                    box-shadow: 0 0 0 3px rgba(24, 49, 83, 0.10);
+                }
+
+            /* Search button */
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 form.row .btn-primary {
+                background: #183153;
+                border-color: #183153;
+                border-radius: 7px;
+                font-weight: 600;
+                padding: 9px 18px;
+            }
+
+                /* Search hover */
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 form.row .btn-primary:hover {
+                    background: #10243e;
+                    border-color: #10243e;
+                }
+
+            /* Clear button */
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 form.row .btn-secondary {
+                background: #ffffff;
+                color: #475467;
+                border: 1px solid #d0d5dd;
+                border-radius: 7px;
+                font-weight: 600;
+                padding: 9px 18px;
+            }
+
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 form.row .btn-secondary:hover {
+                    background: #f2f4f7;
+                }
+
+
+        /* =========================================================
+   TABLE
+   ========================================================= */
+
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 table.table {
+            width: 100%;
+            min-width: 1250px;
+            margin-top: 20px;
+            margin-bottom: 0;
+            background: #ffffff;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: none !important;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 22px rgba(16, 24, 40, 0.10);
+            font-size: 14px;
+        }
+
+
+            /* =========================================================
+                TABLE HEADER
+              ========================================================= */
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 table.table thead {
+                background: #0c214d;
+            }
+
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 table.table thead th {
+                    background: #0c214d !important;
+                    color: #ffffff !important;
+                    padding: 17px 14px;
+                    border: none !important;
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-align: center;
+                    vertical-align: middle;
+                    white-space: nowrap;
+                }
+
+
+                    /* First header */
+                    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                    .container.mt-4 table.table thead th:first-child {
+                        border-top-left-radius: 10px;
+                    }
+
+
+                    /* Last header */
+                    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                    .container.mt-4 table.table thead th:last-child {
+                        border-top-right-radius: 10px;
+                    }
+
+
+            /* =========================================================
+                  TABLE BODY
+             ========================================================= */
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 table.table tbody tr {
+                background: #ffffff !important;
+                transition: background 0.2s ease;
+            }
+
+
+            /* Remove Bootstrap striped colors */
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 table.table.table-striped tbody tr:nth-of-type(odd) {
+                --bs-table-accent-bg: #ffffff !important;
+                background: #ffffff !important;
+            }
+
+
+            /* Hover effect */
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 table.table tbody tr:hover {
+                background: #f7f9fc !important;
+            }
+
+
+            /* All cells */
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 table.table tbody td {
+                padding: 15px 14px;
+                color: #344054;
+                border-top: 1px solid #e4e7ec !important;
+                border-left: none !important;
+                border-right: none !important;
+                border-bottom: none !important;
+                text-align: center;
+                vertical-align: middle;
+                white-space: nowrap;
+            }
+
+
+                /* Request ID */
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 table.table tbody td:first-child {
+                    color: #183153;
+                    font-weight: 700;
+                }
+
+
+                /* Equipment */
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 table.table tbody td:nth-child(2) {
+                    font-weight: 600;
+                    color: #344054;
+                }
+
+
+                /* Issue title */
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 table.table tbody td:nth-child(3) {
+                    text-align: left;
+                    font-weight: 600;
+                }
+
+
+                /* =========================================================
+                    PRIORITY
+                  ========================================================= */
+
+                /* Priority cell */
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 table.table tbody td:nth-child(4) {
+                    font-weight: 600;
+                }
+
+
+                    /* Low */
+                    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                    .container.mt-4 table.table tbody td:nth-child(4):has(+ td) {
+                        /* Keeps the original value visible */
+                    }
+
+
+                /* =========================================================
+   STATUS
+   ========================================================= */
+
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 table.table tbody td:nth-child(5) {
+                    font-weight: 600;
+                }
+
+
+                /* =========================================================
+   ACTION BUTTON
+   ========================================================= */
+
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 table.table tbody td:last-child {
+                    text-align: center;
+                }
+
+                    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                    .container.mt-4 table.table tbody td:last-child .btn-info {
+                        background: #183153 !important;
+                        border-color: #183153 !important;
+                        color: #ffffff !important;
+                        border-radius: 6px;
+                        padding: 7px 15px;
+                        font-size: 13px;
+                        font-weight: 600;
+                        box-shadow: none;
+                    }
+
+                        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                        .container.mt-4 table.table tbody td:last-child .btn-info:hover {
+                            background: #10243e !important;
+                            border-color: #10243e !important;
+                        }
+
+
+                /* =========================================================
+   NO DATA MESSAGE
+   ========================================================= */
+
+                body:has(.container.mt-4 table.table.table-bordered.table-striped)
+                .container.mt-4 table.table tbody td.text-center {
+                    padding: 30px;
+                    color: #667085;
+                    font-weight: 500;
+                }
+
+
+/* =========================================================
+   RESPONSIVE TABLE
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   We do NOT hide any columns.
+
+   On smaller screens the table keeps all 9 columns and
+   allows horizontal scrolling so no information is lost.
+*/
+
+@media (max-width: 1200px) {
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 {
+        max-width: 100%;
+    }
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 table.table {
+            min-width: 1200px;
+        }
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+        /* Heading */
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 > .d-flex {
+            display: block !important;
+            padding-bottom: 60px;
+        }
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 h1 {
+            font-size: 30px;
+        }
+
+        /* Create button */
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 > .d-flex > a {
+            right: 50%;
+            top: auto;
+            bottom: 0;
+            transform: translateX(50%);
+        }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 > .d-flex > a:hover {
+                transform: translateX(50%);
+            }
+
+        /* Search form */
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 form.row {
+            padding: 18px;
+        }
+
+        /*
+       Bootstrap row normally expands beyond the container.
+       Keep the search area inside the screen.
+    */
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 form.row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    /* Responsive table scrolling */
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 {
+        overflow-x: hidden;
+    }
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 table.table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 table.table thead,
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 table.table tbody {
+                width: 100%;
+            }
+}
+
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 h1 {
+            font-size: 26px;
+        }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 h1::after {
+                width: 55px;
+            }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 h1 + p {
+                font-size: 14px;
+            }
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 form.row {
+            padding: 15px;
+        }
+
+        body:has(.container.mt-4 table.table.table-bordered.table-striped)
+        .container.mt-4 table.table {
+            min-width: 1200px;
+        }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 table.table thead th {
+                padding: 14px 12px;
+                font-size: 13px;
+            }
+
+            body:has(.container.mt-4 table.table.table-bordered.table-striped)
+            .container.mt-4 table.table tbody td {
+                padding: 13px 12px;
+                font-size: 13px;
+            }
+}
+
+
+
+
+
+
+/* =========================================================
+   MAINTENANCE REQUESTS
+   Same design style as Equipment page
+   Design only - NO DATA/HTML changes
+   ========================================================= */
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped) {
+    background: #f4f7fb;
+}
+
+/* Main page */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 {
+    max-width: 1450px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 > .d-flex {
+    position: relative;
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    text-align: center;
+    min-height: 85px;
+    margin-bottom: 30px !important;
+}
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 > .d-flex > div {
+    text-align: center;
+}
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 h1 {
+    margin: 0;
+    color: #182b49;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+}
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 h1::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    margin: 12px auto 10px;
+    background: #182b49;
+    border-radius: 10px;
+}
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 h1 + p {
+    margin: 0;
+    color: #667085;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+/* Create Request button */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 > .d-flex > a {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: #183153 !important;
+    border: none !important;
+    border-radius: 7px;
+
+    padding: 10px 18px;
+
+    color: #ffffff !important;
+    font-weight: 600;
+
+    box-shadow: 0 4px 10px rgba(24, 49, 83, 0.15);
+}
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 > .d-flex > a:hover {
+    background: #10243e !important;
+    transform: translateY(-50%);
+}
+
+
+/* =========================================================
+   SEARCH / FILTER CARD
+   ========================================================= */
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row {
+    background: #ffffff;
+
+    padding: 22px;
+
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 25px !important;
+
+    border: 1px solid #e4e9f0;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 18px rgba(16, 24, 40, 0.07);
+}
+
+
+/* Labels */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row .form-label {
+    color: #344054;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+
+/* Input */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row .form-control {
+    height: 43px;
+
+    border: 1px solid #d0d5dd;
+    border-radius: 7px;
+
+    color: #344054;
+    font-size: 14px;
+
+    box-shadow: none;
+}
+
+
+/* Dropdown */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row .form-select {
+    height: 43px;
+
+    border: 1px solid #d0d5dd;
+    border-radius: 7px;
+
+    color: #344054;
+    font-size: 14px;
+
+    box-shadow: none;
+}
+
+
+/* Focus */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row .form-control:focus,
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row .form-select:focus {
+    border-color: #183153;
+
+    box-shadow: 0 0 0 3px rgba(24, 49, 83, 0.10);
+}
+
+
+/* Search button */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row .btn-primary {
+    background: #183153 !important;
+    border-color: #183153 !important;
+
+    border-radius: 7px;
+
+    padding: 9px 18px;
+
+    font-weight: 600;
+}
+
+
+/* Search hover */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row .btn-primary:hover {
+    background: #10243e !important;
+    border-color: #10243e !important;
+}
+
+
+/* Clear button */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row .btn-secondary {
+    background: #ffffff !important;
+
+    color: #475467 !important;
+
+    border: 1px solid #d0d5dd !important;
+
+    border-radius: 7px;
+
+    padding: 9px 18px;
+
+    font-weight: 600;
+}
+
+
+/* Clear hover */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 form.row .btn-secondary:hover {
+    background: #f2f4f7 !important;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table.table-bordered.table-striped {
+    width: 100%;
+
+    min-width: 1250px;
+
+    margin: 0;
+
+    background: #ffffff;
+
+    border: none !important;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 22px rgba(16, 24, 40, 0.10);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table.table-bordered.table-striped thead th {
+    background: #0c214d !important;
+
+    color: #ffffff !important;
+
+    padding: 17px 14px;
+
+    border: none !important;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-align: center;
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+
+/* First header corner */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+
+/* Last header corner */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table.table-striped tbody tr,
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody tr {
+    background: #ffffff !important;
+
+    transition: background 0.2s ease;
+}
+
+
+/* Remove Bootstrap striped background */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table.table-striped tbody tr:nth-of-type(odd) {
+    background: #ffffff !important;
+}
+
+
+/* Hover */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody tr:hover {
+    background: #f7f9fc !important;
+}
+
+
+/* Table cells */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td {
+    padding: 15px 14px;
+
+    color: #344054;
+
+    border-top: 1px solid #e4e7ec !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+
+    text-align: center;
+    vertical-align: middle;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   INDIVIDUAL COLUMNS
+   ========================================================= */
+
+/* Request ID */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td:nth-child(1) {
+    color: #183153;
+    font-weight: 700;
+}
+
+
+/* Equipment */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td:nth-child(2) {
+    font-weight: 600;
+}
+
+
+/* Issue Title */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td:nth-child(3) {
+    text-align: left;
+    font-weight: 600;
+}
+
+
+/* Priority */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td:nth-child(4) {
+    font-weight: 600;
+}
+
+
+/* Status */
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td:nth-child(5) {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+   ========================================================= */
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td:last-child {
+    text-align: center;
+}
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td:last-child .btn-info {
+    background: #183153 !important;
+
+    border: 1px solid #183153 !important;
+
+    color: #ffffff !important;
+
+    border-radius: 6px;
+
+    padding: 7px 16px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: none;
+}
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td:last-child .btn-info:hover {
+    background: #10243e !important;
+    border-color: #10243e !important;
+}
+
+
+/* =========================================================
+   NO DATA
+   ========================================================= */
+
+body:has(.container.mt-4 table.table.table-bordered.table-striped)
+.container.mt-4 table.table tbody td.text-center {
+    padding: 30px;
+
+    color: #667085;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   None of your 9 columns are removed.
+
+   On smaller screens the complete table remains available
+   through horizontal scrolling.
+*/
+
+
+@media (max-width: 1200px) {
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 {
+        max-width: 100%;
+    }
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 table.table {
+        min-width: 1250px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* Heading */
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 > .d-flex {
+        display: block !important;
+
+        padding-bottom: 60px;
+    }
+
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 h1 {
+        font-size: 30px;
+    }
+
+
+    /* Create button */
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 > .d-flex > a {
+        right: 50%;
+        top: auto;
+        bottom: 0;
+
+        transform: translateX(50%);
+    }
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 > .d-flex > a:hover {
+        transform: translateX(50%);
+    }
+
+
+    /* Search card */
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 form.row {
+        padding: 18px;
+    }
+
+
+    /* Table horizontal scrolling */
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 {
+        overflow-x: hidden;
+    }
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 table.table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 h1 {
+        font-size: 26px;
+    }
+
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 h1::after {
+        width: 55px;
+    }
+
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 h1 + p {
+        font-size: 14px;
+    }
+
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 form.row {
+        padding: 15px;
+    }
+
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 table.table {
+        min-width: 1250px;
+    }
+
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 table.table thead th {
+        padding: 14px 12px;
+        font-size: 13px;
+    }
+
+
+    body:has(.container.mt-4 table.table.table-bordered.table-striped)
+    .container.mt-4 table.table tbody td {
+        padding: 13px 12px;
+        font-size: 13px;
+    }
+}

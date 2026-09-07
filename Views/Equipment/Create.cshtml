@@ -1,0 +1,144 @@
+﻿@model MaintenanceDashboard.Models.Equipment
+
+@{
+    ViewData["Title"] = "Add Equipment";
+}
+
+<div class="container mt-4">
+
+    <h1>Add Equipment</h1>
+
+    <form asp-action="Create" method="post">
+
+        <div asp-validation-summary="ModelOnly"
+             class="text-danger mb-3">
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="EquipmentId"
+                   class="form-label">
+                Equipment ID
+            </label>
+
+            <input asp-for="EquipmentId"
+                   class="form-control"
+                   placeholder="Example: EQ-009" />
+
+            <span asp-validation-for="EquipmentId"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="EquipmentName"
+                   class="form-label">
+                Equipment Name
+            </label>
+
+            <input asp-for="EquipmentName"
+                   class="form-control"
+                   placeholder="Enter equipment name" />
+
+            <span asp-validation-for="EquipmentName"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="Category"
+                   class="form-label">
+                Category
+            </label>
+
+            <input asp-for="Category"
+                   class="form-control"
+                   placeholder="Example: Pump" />
+
+            <span asp-validation-for="Category"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="Location"
+                   class="form-label">
+                Location
+            </label>
+
+            <input asp-for="Location"
+                   class="form-control"
+                   placeholder="Example: Area A" />
+
+            <span asp-validation-for="Location"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="LastMaintenanceDate"
+                   class="form-label">
+                Last Maintenance Date
+            </label>
+
+            <input asp-for="LastMaintenanceDate"
+                   type="date"
+                   class="form-control" />
+
+            <span asp-validation-for="LastMaintenanceDate"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="CurrentStatus"
+                   class="form-label">
+                Current Status
+            </label>
+
+            <select asp-for="CurrentStatus"
+                    class="form-select">
+
+                <option value="">
+                    Select Status
+                </option>
+
+                <option value="Operational">
+                    Operational
+                </option>
+
+                <option value="Maintenance">
+                    Maintenance
+                </option>
+
+            </select>
+
+            <span asp-validation-for="CurrentStatus"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Add Equipment
+        </button>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+
+</div>

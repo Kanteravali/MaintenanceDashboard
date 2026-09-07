@@ -1,0 +1,671 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+
+    var recentRequests =
+        ViewBag.RecentRequests as List<MaintenanceDashboard.Models.MaintenanceRequest>;
+
+    var equipmentNames =
+        ViewBag.EquipmentNames as Dictionary<string, string>;
+}
+
+<div class="maintenance-dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-symbol">
+                ⚙
+            </div>
+
+            <div>
+                <div class="logo-title">Equipment</div>
+                <div class="logo-subtitle">Maintenance</div>
+            </div>
+        </div>
+
+        <div class="sidebar-heading">
+            MAINTENANCE SYSTEM
+        </div>
+
+        <nav class="dashboard-navigation">
+
+            <a asp-controller="Home"
+               asp-action="Index"
+               class="dashboard-nav-link active">
+
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a asp-controller="Equipment"
+               asp-action="Index"
+               class="dashboard-nav-link">
+
+                <span class="nav-icon">▣</span>
+                <span>Equipment</span>
+
+            </a>
+
+            <a asp-controller="Maintenance"
+               asp-action="Index"
+               class="dashboard-nav-link">
+
+                <span class="nav-icon">✓</span>
+                <span>Maintenance Requests</span>
+
+            </a>
+
+            <a asp-controller="Api"
+               asp-action="Index"
+               class="dashboard-nav-link">
+
+                <span class="nav-icon">↔</span>
+                <span>API Data</span>
+
+            </a>
+
+        </nav>
+
+
+       <!------ <div class="sidebar-information">
+
+            <div class="sidebar-info-title">
+                System Information
+            </div>
+
+            <div class="sidebar-info-row">
+                <span>Local Storage</span>
+                <span class="connected">
+                    ● Connected
+                </span>
+            </div>
+
+            <div class="sidebar-info-row">
+                <span>REST API</span>
+                <span class="connected">
+                    ● Available
+                </span>
+            </div>
+
+        </div>---->
+
+
+   
+
+    </aside>
+
+
+    <!-- MAIN AREA -->
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+        <header class="dashboard-header">
+
+            <div>
+                <div class="header-label">
+                    EQUIPMENT MAINTENANCE SYSTEM
+                </div>
+
+                <h1>
+                    Maintenance Dashboard
+                </h1>
+
+            </div>
+
+            <a asp-controller="Maintenance"
+               asp-action="Create"
+               class="dashboard-primary-button">
+
+                <span>＋</span>
+                Create Maintenance Request
+
+            </a>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <div class="dashboard-content">
+
+
+            <!-- STATISTICS -->
+            <section class="dashboard-statistics">
+
+
+                <!-- TOTAL EQUIPMENT -->
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon stat-equipment">
+                            ⚙
+                        </div>
+
+                        <span>
+                            Total Equipment
+                        </span>
+
+                    </div>
+
+                    <div class="stat-number">
+                        @ViewBag.TotalEquipment
+                    </div>
+
+                    <div class="stat-description">
+                        Registered equipment
+                    </div>
+
+                    <a asp-controller="Equipment"
+                       asp-action="Index"
+                       class="stat-link">
+
+                        View Equipment →
+
+                    </a>
+
+                </div>
+
+
+                <!-- OPEN REQUESTS -->
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon stat-open">
+                            !
+                        </div>
+
+                        <span>
+                            Open Requests
+                        </span>
+
+                    </div>
+
+                    <div class="stat-number">
+                        @ViewBag.OpenRequests
+                    </div>
+
+                    <div class="stat-description">
+                        Waiting for attention
+                    </div>
+
+                    <a asp-controller="Maintenance"
+                       asp-action="Index"
+                       asp-route-status="Open"
+                       class="stat-link">
+
+                        View Requests →
+
+                    </a>
+
+                </div>
+
+
+                <!-- IN PROGRESS -->
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon stat-progress">
+                            ↻
+                        </div>
+
+                        <span>
+                            In Progress
+                        </span>
+
+                    </div>
+
+                    <div class="stat-number">
+                        @ViewBag.InProgress
+                    </div>
+
+                    <div class="stat-description">
+                        Currently being worked on
+                    </div>
+
+                    <a asp-controller="Maintenance"
+                       asp-action="Index"
+                       asp-route-status="In Progress"
+                       class="stat-link">
+
+                        View Requests →
+
+                    </a>
+
+                </div>
+
+
+                <!-- COMPLETED -->
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon stat-completed">
+                            ✓
+                        </div>
+
+                        <span>
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <div class="stat-number">
+                        @ViewBag.Completed
+                    </div>
+
+                    <div class="stat-description">
+                        Successfully completed
+                    </div>
+
+                    <a asp-controller="Maintenance"
+                       asp-action="Index"
+                       asp-route-status="Completed"
+                       class="stat-link">
+
+                        View Requests →
+
+                    </a>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- CRITICAL + STATUS + PRIORITY -->
+            <section class="dashboard-middle">
+
+
+                <!-- CRITICAL ISSUES -->
+                <div class="critical-dashboard-card">
+
+                    <div class="critical-symbol">
+                        !
+                    </div>
+
+                    <div class="critical-content">
+
+                        <div class="critical-label">
+                            Critical Issues
+                        </div>
+
+                        <div class="critical-number">
+                            @ViewBag.CriticalIssues
+                        </div>
+
+                        <p>
+                            Issues requiring immediate attention
+                        </p>
+
+                    </div>
+
+                    <a asp-controller="Maintenance"
+                       asp-action="Index"
+                       asp-route-priority="Critical">
+
+                        View Critical Issues →
+
+                    </a>
+
+                </div>
+
+
+                <!-- STATUS SUMMARY -->
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Requests by Status</h3>
+
+                            <p>
+                                Current maintenance request status
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="status-list">
+
+                        <div class="status-row">
+
+                            <div class="status-name">
+                                <span class="status-dot status-open-dot"></span>
+                                Open
+                            </div>
+
+                            <strong>
+                                @ViewBag.OpenRequests
+                            </strong>
+
+                        </div>
+
+
+                        <div class="status-row">
+
+                            <div class="status-name">
+                                <span class="status-dot status-progress-dot"></span>
+                                In Progress
+                            </div>
+
+                            <strong>
+                                @ViewBag.InProgress
+                            </strong>
+
+                        </div>
+
+
+                        <div class="status-row">
+
+                            <div class="status-name">
+                                <span class="status-dot status-hold-dot"></span>
+                                On Hold
+                            </div>
+
+                            <strong>
+                                @ViewBag.OnHold
+                            </strong>
+
+                        </div>
+
+
+                        <div class="status-row">
+
+                            <div class="status-name">
+                                <span class="status-dot status-completed-dot"></span>
+                                Completed
+                            </div>
+
+                            <strong>
+                                @ViewBag.Completed
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRIORITY SUMMARY -->
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Requests by Priority</h3>
+
+                            <p>
+                                Current priority distribution
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="priority-list">
+
+                        <div class="priority-row">
+
+                            <span>
+                                <i class="priority-dot critical-dot"></i>
+                                Critical
+                            </span>
+
+                            <strong>
+                                @ViewBag.PriorityCritical
+                            </strong>
+
+                        </div>
+
+
+                        <div class="priority-row">
+
+                            <span>
+                                <i class="priority-dot high-dot"></i>
+                                High
+                            </span>
+
+                            <strong>
+                                @ViewBag.PriorityHigh
+                            </strong>
+
+                        </div>
+
+
+                        <div class="priority-row">
+
+                            <span>
+                                <i class="priority-dot medium-dot"></i>
+                                Medium
+                            </span>
+
+                            <strong>
+                                @ViewBag.PriorityMedium
+                            </strong>
+
+                        </div>
+
+
+                        <div class="priority-row">
+
+                            <span>
+                                <i class="priority-dot low-dot"></i>
+                                Low
+                            </span>
+
+                            <strong>
+                                @ViewBag.PriorityLow
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECENT REQUESTS -->
+            <section class="dashboard-panel recent-requests-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>
+                            Recent Maintenance Requests
+                        </h3>
+
+                        <p>
+                            Latest maintenance activity
+                        </p>
+                    </div>
+
+                    <a asp-controller="Maintenance"
+                       asp-action="Index"
+                       class="view-all-link">
+
+                        View All Requests →
+
+                    </a>
+
+                </div>
+
+
+                @if (recentRequests != null &&
+                     recentRequests.Count > 0)
+                {
+
+                    <div class="dashboard-table-wrapper">
+
+                        <table class="dashboard-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Request ID</th>
+                                    <th>Equipment</th>
+                                    <th>Issue Title</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                    <th>Created Date</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (var item in recentRequests)
+                                {
+
+                                    var equipmentName =
+                                        equipmentNames != null &&
+                                        equipmentNames.ContainsKey(item.EquipmentId)
+                                            ? equipmentNames[item.EquipmentId]
+                                            : item.EquipmentId;
+
+                                    <tr>
+
+                                        <td>
+                                            <strong>
+                                                @item.RequestId
+                                            </strong>
+                                        </td>
+
+                                        <td>
+                                            @equipmentName
+                                        </td>
+
+                                        <td>
+                                            @item.IssueTitle
+                                        </td>
+
+                                        <td>
+
+                                            @if (item.Priority == "Critical")
+                                            {
+                                                <span class="priority-badge critical">
+                                                    Critical
+                                                </span>
+                                            }
+                                            else if (item.Priority == "High")
+                                            {
+                                                <span class="priority-badge high">
+                                                    High
+                                                </span>
+                                            }
+                                            else if (item.Priority == "Medium")
+                                            {
+                                                <span class="priority-badge medium">
+                                                    Medium
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="priority-badge low">
+                                                    Low
+                                                </span>
+                                            }
+
+                                        </td>
+
+                                        <td>
+
+                                            @if (item.Status == "Open")
+                                            {
+                                                <span class="request-status open">
+                                                    Open
+                                                </span>
+                                            }
+                                            else if (item.Status == "In Progress")
+                                            {
+                                                <span class="request-status progress">
+                                                    In Progress
+                                                </span>
+                                            }
+                                            else if (item.Status == "On Hold")
+                                            {
+                                                <span class="request-status hold">
+                                                    On Hold
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="request-status completed">
+                                                    Completed
+                                                </span>
+                                            }
+
+                                        </td>
+
+                                        <td>
+                                            @item.CreatedDate.ToString("dd MMM yyyy")
+                                        </td>
+
+                                        <td>
+
+                                            <a asp-controller="Maintenance"
+                                               asp-action="Details"
+                                               asp-route-id="@item.RequestId"
+                                               class="table-view-button">
+
+                                                View
+
+                                            </a>
+
+                                        </td>
+
+                                    </tr>
+
+                                }
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                }
+                else
+                {
+
+                    <div class="dashboard-empty">
+
+                        <div class="empty-icon">
+                            📋
+                        </div>
+
+                        <h4>
+                            No Maintenance Requests
+                        </h4>
+
+                        <p>
+                            There are currently no maintenance requests.
+                        </p>
+
+                        <a asp-controller="Maintenance"
+                           asp-action="Create">
+
+                            Create Request
+
+                        </a>
+
+                    </div>
+
+                }
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>

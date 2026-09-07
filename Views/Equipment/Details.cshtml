@@ -1,0 +1,60 @@
+﻿@model MaintenanceDashboard.Models.Equipment
+
+@{
+    ViewData["Title"] = "Equipment Details";
+}
+
+<div class="container mt-4">
+
+    <h1>Equipment Details</h1>
+
+    <div class="card mt-3">
+
+        <div class="card-body">
+
+            <h4 class="card-title">
+                @Model.EquipmentName
+            </h4>
+
+            <hr />
+
+            <p>
+                <strong>Equipment ID:</strong>
+                @Model.EquipmentId
+            </p>
+
+            <p>
+                <strong>Equipment Name:</strong>
+                @Model.EquipmentName
+            </p>
+
+            <p>
+                <strong>Category:</strong>
+                @Model.Category
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                @Model.Location
+            </p>
+
+            <p>
+                <strong>Last Maintenance Date:</strong>
+                @Model.LastMaintenanceDate.ToString("dd-MM-yyyy")
+            </p>
+
+            <p>
+                <strong>Current Status:</strong>
+                @Model.CurrentStatus
+            </p>
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+                Back to Equipment
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

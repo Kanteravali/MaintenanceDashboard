@@ -1,0 +1,165 @@
+﻿@model MaintenanceDashboard.Models.MaintenanceRequest
+
+@{
+    ViewData["Title"] = "Create Maintenance Request";
+}
+
+<div class="container mt-4">
+
+    <h1>Create Maintenance Request</h1>
+
+    <form asp-action="Create" method="post">
+
+        <div asp-validation-summary="ModelOnly"
+             class="text-danger mb-3">
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Equipment
+            </label>
+
+            <select asp-for="EquipmentId"
+                    class="form-select">
+
+                <option value="">
+                    Select Equipment
+                </option>
+
+                @foreach (var equipment in ViewBag.Equipment)
+                {
+                    <option value="@equipment.EquipmentId">
+                        @equipment.EquipmentName
+                    </option>
+                }
+
+            </select>
+
+            <span asp-validation-for="EquipmentId"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="IssueTitle"
+                   class="form-label">
+                Issue Title
+            </label>
+
+            <input asp-for="IssueTitle"
+                   class="form-control"
+                   placeholder="Enter issue title" />
+
+            <span asp-validation-for="IssueTitle"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="Description"
+                   class="form-label">
+                Description
+            </label>
+
+            <textarea asp-for="Description"
+                      class="form-control"
+                      rows="4"
+                      placeholder="Describe the issue">
+            </textarea>
+
+            <span asp-validation-for="Description"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="Priority"
+                   class="form-label">
+                Priority
+            </label>
+
+            <select asp-for="Priority"
+                    class="form-select">
+
+                <option value="">
+                    Select Priority
+                </option>
+
+                <option value="Low">
+                    Low
+                </option>
+
+                <option value="Medium">
+                    Medium
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+                <option value="Critical">
+                    Critical
+                </option>
+
+            </select>
+
+            <span asp-validation-for="Priority"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="ReportedBy"
+                   class="form-label">
+                Reported By
+            </label>
+
+            <input asp-for="ReportedBy"
+                   class="form-control"
+                   placeholder="Enter your name" />
+
+            <span asp-validation-for="ReportedBy"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label asp-for="AssignedTo"
+                   class="form-label">
+                Assigned To
+            </label>
+
+            <input asp-for="AssignedTo"
+                   class="form-control"
+                   placeholder="Enter assigned person" />
+
+            <span asp-validation-for="AssignedTo"
+                  class="text-danger">
+            </span>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Create Request
+        </button>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+
+</div>

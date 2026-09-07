@@ -1,0 +1,82 @@
+[
+  {
+    "EquipmentId": "EQ-003",
+    "EquipmentName": "Air Compressor",
+    "Category": "Compressor",
+    "Location": "Area A",
+    "LastMaintenanceDate": "2026-07-20T00:00:00",
+    "CurrentStatus": "Maintenance"
+  },
+  {
+    "EquipmentId": "EQ-004",
+    "EquipmentName": "Cooling Fan",
+    "Category": "Fan1",
+    "Location": "Area d",
+    "LastMaintenanceDate": "2026-08-10T00:00:00",
+    "CurrentStatus": "Operational"
+  },
+  {
+    "EquipmentId": "EQ-006",
+    "EquipmentName": "Generator",
+    "Category": "Electrical",
+    "Location": "Area D",
+    "LastMaintenanceDate": "2026-07-25T00:00:00",
+    "CurrentStatus": "Operational"
+  },
+  {
+    "EquipmentId": "EQ-007",
+    "EquipmentName": "Conveyor Belt",
+    "Category": "Electrical2",
+    "Location": "Area C",
+    "LastMaintenanceDate": "2026-07-18T00:00:00",
+    "CurrentStatus": "Maintenance"
+  },
+  {
+    "EquipmentId": "EQ-008",
+    "EquipmentName": "Control Panel",
+    "Category": "Electrical",
+    "Location": "Area A",
+    "LastMaintenanceDate": "2026-08-08T00:00:00",
+    "CurrentStatus": "Operational"
+  },
+  {
+    "EquipmentId": "EQ-009",
+    "EquipmentName": "water pump",
+    "Category": "pump",
+    "Location": "Area S",
+    "LastMaintenanceDate": "2026-09-01T00:00:00",
+    "CurrentStatus": "Operational"
+  },
+  {
+    "EquipmentId": "EQ-010",
+    "EquipmentName": "Laptop",
+    "Category": "Electrical",
+    "Location": "Area C",
+    "LastMaintenanceDate": "2026-09-01T00:00:00",
+    "CurrentStatus": "Operational"
+  },
+  {
+    "EquipmentId": "EQ-011",
+    "EquipmentName": "Desktop",
+    "Category": "Electrical",
+    "Location": "Area D",
+    "LastMaintenanceDate": "2026-09-07T00:00:00",
+    "CurrentStatus": "Maintenance"
+  },
+  {
+    "EquipmentId": "EQ-012",
+    "EquipmentName": "dfghjk",
+    "Category": "fghjk",
+    "Location": "fghj",
+    "LastMaintenanceDate": "2026-09-02T00:00:00",
+    "CurrentStatus": "Operational"
+  },
+  {
+    "EquipmentId": "EQ-005",
+    "EquipmentName": "small compressor",
+    "Category": "compressor",
+    "Location": "Utility",
+    "LastMaintenanceDate": "2026-09-01T00:00:00",
+    "CurrentStatus": "Maintenance"
+  }
+]

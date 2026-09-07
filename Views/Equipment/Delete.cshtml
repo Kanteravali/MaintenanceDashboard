@@ -1,0 +1,62 @@
+﻿@model MaintenanceDashboard.Models.Equipment
+
+@{
+    ViewData["Title"] = "Delete Equipment";
+}
+
+<div class="container mt-4">
+
+    <h1>Delete Equipment</h1>
+
+    <div class="alert alert-warning mt-3">
+
+        <strong>Are you sure you want to delete this equipment?</strong>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-body">
+
+            <p>
+                <strong>Equipment ID:</strong>
+                @Model.EquipmentId
+            </p>
+
+            <p>
+                <strong>Equipment Name:</strong>
+                @Model.EquipmentName
+            </p>
+
+            <p>
+                <strong>Category:</strong>
+                @Model.Category
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                @Model.Location
+            </p>
+
+            <form asp-action="Delete" method="post">
+
+                <input type="hidden"
+                       asp-for="EquipmentId" />
+
+                <button type="submit"
+                        class="btn btn-danger">
+                     Delete
+                </button>
+
+                <a asp-action="Index"
+                   class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

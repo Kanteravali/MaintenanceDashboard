@@ -1,0 +1,131 @@
+﻿@model MaintenanceDashboard.Models.MaintenanceRequest
+
+@{
+    ViewData["Title"] = "Maintenance Request Details";
+}
+
+<div class="container mt-4">
+
+    <h1>Maintenance Request Details</h1>
+
+    <div class="card mt-3">
+
+        <div class="card-body">
+
+            <h4 class="card-title">
+                @Model.IssueTitle
+            </h4>
+
+            <hr />
+
+            <p>
+                <strong>Request ID:</strong>
+                @Model.RequestId
+            </p>
+
+            <p>
+                <strong>Equipment:</strong>
+
+                @if (ViewBag.Equipment != null)
+                {
+                    @ViewBag.Equipment.EquipmentName
+                }
+                else
+                {
+                    @Model.EquipmentId
+                }
+            </p>
+
+            <p>
+                <strong>Issue Title:</strong>
+                @Model.IssueTitle
+            </p>
+
+            <p>
+                <strong>Description:</strong>
+                @Model.Description
+            </p>
+
+            <p>
+                <strong>Priority:</strong>
+                @Model.Priority
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                @Model.Status
+            </p>
+
+            <p>
+                <strong>Reported By:</strong>
+                @Model.ReportedBy
+            </p>
+
+            <p>
+                <strong>Created Date:</strong>
+                @Model.CreatedDate.ToString("dd-MM-yyyy HH:mm")
+            </p>
+
+            <p>
+                <strong>Assigned To:</strong>
+                @Model.AssignedTo
+            </p>
+
+            <hr />
+
+            <h5>Update Status</h5>
+
+            <div class="mt-3">
+
+                <form asp-action="StartWork"
+                      asp-route-id="@Model.RequestId"
+                      method="post"
+                      class="d-inline">
+
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Start Work
+                    </button>
+
+                </form>
+
+                <form asp-action="PutOnHold"
+                      asp-route-id="@Model.RequestId"
+                      method="post"
+                      class="d-inline">
+
+                    <button type="submit"
+                            class="btn btn-warning">
+                        Put On Hold
+                    </button>
+
+                </form>
+
+                <form asp-action="Complete"
+                      asp-route-id="@Model.RequestId"
+                      method="post"
+                      class="d-inline">
+
+                    <button type="submit"
+                            class="btn btn-success">
+                        Complete
+                    </button>
+
+                </form>
+
+            </div>
+
+            <div class="mt-3">
+
+                <a asp-action="Index"
+                   class="btn btn-secondary">
+                    Back to Requests
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

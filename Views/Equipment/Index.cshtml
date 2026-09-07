@@ -1,0 +1,413 @@
+﻿@model IEnumerable<MaintenanceDashboard.Models.Equipment>
+
+@{
+    ViewData["Title"] = "Equipment";
+}
+
+<div class="equipment-page">
+
+    <!-- Page Heading -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+         <center><h1>EQUIPMENT</h1></center>
+
+           <!---- <p class="text-muted">
+                Manage and monitor equipment
+            </p>-->
+        </div>
+
+        <a asp-action="Create"
+           class="btn btn-primary equipment-add-btn">
+
+            + Add Equipment
+
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         SEARCH AND FILTER SECTION
+         ===================================================== -->
+
+    <div class="card equipment-search-card mb-4">
+
+        <div class="card-header equipment-search-header">
+
+            <h5 class="mb-0">
+                Search Equipment
+            </h5>
+
+        </div>
+
+
+        <div class="card-body equipment-search-body">
+
+            <form asp-action="Index"
+                  method="get"
+                  class="row g-3">
+
+
+                <!-- Search -->
+
+                <div class="col-md-5">
+
+                    <label class="form-label">
+                        Search
+                    </label>
+
+                    <input type="text"
+                           name="search"
+                           value="@ViewBag.Search"
+                           class="form-control"
+                           placeholder="Search by Equipment ID or Name" />
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="col-md-4">
+
+                    <label class="form-label">
+                        Category
+                    </label>
+
+                    <select name="category"
+                            class="form-select">
+
+                        <option value="">
+                            All Categories
+                        </option>
+
+
+                        @foreach (var category in ViewBag.Categories)
+                        {
+                            if (ViewBag.Category == category)
+                            {
+                                <option value="@category"
+                                        selected>
+
+                                    @category
+
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@category">
+
+                                    @category
+
+                                </option>
+                            }
+                        }
+
+                    </select>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="col-md-3 d-flex align-items-end gap-2">
+
+                    <button type="submit"
+                            class="btn btn-primary equipment-search-btn">
+
+                        Search
+
+                    </button>
+
+
+                    <a asp-action="Index"
+                       class="btn btn-secondary equipment-clear-btn">
+
+                        Clear
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EQUIPMENT TABLE
+         ===================================================== -->
+
+    <div class="card equipment-table-card shadow-sm">
+
+
+        <!-- Table Card Header -->
+
+        <div class="card-header equipment-table-header
+            d-flex justify-content-between align-items-center">
+
+            <div>
+
+                <h5 class="mb-1">
+                    Equipment List
+                </h5>
+
+                <small>
+                    Equipment information and maintenance status
+                </small>
+
+            </div>
+
+
+            <span class="equipment-total">
+
+                Total:
+                <strong>
+                    @Model.Count()
+                </strong>
+
+            </span>
+
+        </div>
+
+
+
+        <!-- Table Body -->
+
+        <div class="card-body p-0">
+
+
+            <!-- Responsive wrapper -->
+
+            <div class="table-responsive equipment-table-wrapper">
+
+                <table class="table equipment-table mb-0">
+
+
+                    <!-- =================================================
+                         TABLE HEADER
+                         ================================================= -->
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Equipment ID
+                                <span class="sort-icon">↕</span>
+                            </th>
+
+                            <th>
+                                Equipment Name
+                            </th>
+
+                            <th>
+                                Category
+                                <span class="sort-icon">↕</span>
+                            </th>
+
+                            <th>
+                                Location
+                            </th>
+
+                            <th>
+                                Last Maintenance Date
+                                <span class="sort-icon">↕</span>
+                            </th>
+
+                            <th>
+                                Current Status
+                                <span class="sort-icon">↕</span>
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <!-- =================================================
+                         TABLE BODY
+                         ================================================= -->
+
+                    <tbody>
+
+
+                        @if (!Model.Any())
+                        {
+                            <tr>
+
+                                <td colspan="7"
+                                    class="equipment-no-data">
+
+                                    No equipment found.
+
+                                </td>
+
+                            </tr>
+                        }
+                        else
+                        {
+
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+
+
+                                    <!-- Equipment ID -->
+
+                                    <td class="equipment-id">
+
+                                        <strong>
+                                            @item.EquipmentId
+                                        </strong>
+
+                                    </td>
+
+
+
+                                    <!-- Equipment Name -->
+
+                                    <td class="equipment-name">
+
+                                        @item.EquipmentName
+
+                                    </td>
+
+
+
+                                    <!-- Category -->
+
+                                    <td>
+
+                                        <span class="category-badge">
+
+                                            @item.Category
+
+                                        </span>
+
+                                    </td>
+
+
+
+                                    <!-- Location -->
+
+                                    <td class="equipment-location">
+
+                                        @item.Location
+
+                                    </td>
+
+
+
+                                    <!-- Last Maintenance Date -->
+
+                                    <td class="equipment-date">
+
+                                        @item.LastMaintenanceDate
+
+                                    </td>
+
+
+
+                                    <!-- Current Status -->
+
+                                    <td>
+
+                                        @if (item.CurrentStatus == "Operational")
+                                        {
+                                            <span class="status-badge status-operational">
+
+                                                <span class="status-dot"></span>
+
+                                                @item.CurrentStatus
+
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="status-badge status-warning">
+
+                                                <span class="status-dot"></span>
+
+                                                @item.CurrentStatus
+
+                                            </span>
+                                        }
+
+                                    </td>
+
+
+
+                                    <!-- Actions -->
+
+                                    <td>
+
+                                        <div class="equipment-actions">
+
+
+                                            <!-- Details -->
+
+                                            <a asp-action="Details"
+                                               asp-route-id="@item.EquipmentId"
+                                               class="equipment-action details-action">
+
+                                                Details
+
+                                            </a>
+
+
+
+                                            <!-- Edit -->
+
+                                            <a asp-action="Edit"
+                                               asp-route-id="@item.EquipmentId"
+                                               class="equipment-action edit-action">
+
+                                                Edit
+
+                                            </a>
+
+
+
+                                            <!-- Delete -->
+
+                                            <a asp-action="Delete"
+                                               asp-route-id="@item.EquipmentId"
+                                               class="equipment-action delete-action">
+
+                                                Delete
+
+                                            </a>
+
+
+                                        </div>
+
+                                    </td>
+
+
+                                </tr>
+
+                            }
+
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
